@@ -82,6 +82,7 @@ function ed_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of ed_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of ed_p_disc as a double
 ed=get(hObject,'String');
+handles.ed_p_disc=ed;
 
 
 % --- Executes during object creation, after setting all properties.
@@ -106,7 +107,7 @@ function lim_inf_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of lim_inf_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of lim_inf_p_disc as a double
 lim_inf=str2num(get(hObject,'String'));
-
+handles.lim_inf_p_disc=lim_inf;
 
 % --- Executes during object creation, after setting all properties.
 function lim_inf_p_disc_CreateFcn(hObject, eventdata, handles)
@@ -130,7 +131,7 @@ function lim_sup_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of lim_sup_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of lim_sup_p_disc as a double
 lim_sup=str2num(get(hObject,'String'));
-
+handles.lim_sup_p_disc=lim_sup;
 % --- Executes during object creation, after setting all properties.
 function lim_sup_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to lim_sup_p_disc (see GCBO)
@@ -153,7 +154,7 @@ function cc1_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of cc1_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of cc1_p_disc as a double
 cc1=str2num(get(hObject,'String'));
-
+handles.cc1=cc1;
 % --- Executes during object creation, after setting all properties.
 function cc1_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to cc1_p_disc (see GCBO)
@@ -176,7 +177,7 @@ function cc2_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of cc2_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of cc2_p_disc as a double
 cc2=str2num(get(hObject,'String'));
-
+handles.cc2=cc2;
 % --- Executes during object creation, after setting all properties.
 function cc2_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to cc2_p_disc (see GCBO)
@@ -199,7 +200,7 @@ function n_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of n_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of n_p_disc as a double
 nump=str2num(get(hObject,'String'));
-
+handles.nump=nump;
 % --- Executes during object creation, after setting all properties.
 function n_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to n_p_disc (see GCBO)
@@ -222,7 +223,7 @@ function ord_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of ord_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of ord_p_disc as a double
 ord=str2num(get(hObject,'String'));
-
+handles.ord_p_disc=ord_p_disc;
 % --- Executes during object creation, after setting all properties.
 function ord_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to ord_p_disc (see GCBO)
@@ -245,7 +246,7 @@ function opt_p_disc_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'String') returns contents of opt_p_disc as text
 %        str2double(get(hObject,'String')) returns contents of opt_p_disc as a double
 opt=get(hObject,'String');
-
+handles.opt_p_disc=opt;
 % --- Executes during object creation, after setting all properties.
 function opt_p_disc_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to opt_p_disc (see GCBO)
@@ -264,7 +265,7 @@ function bto_p_disc_Callback(hObject, eventdata, handles)
 % hObject    handle to bto_p_disc (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-[pplot,disc]=mdf_malha(ed,lim_inf,lim_sup,cc1,cc2,nump,ord,opt);
+[pplot,disc]=mdf_malha(handles.lim_inf_p_disc,handles.lim_inf_p_disc,handles.lim_sup_p_disc,handles.cc1,handles.cc2,handles.nump,handles.ord_p_disc,handles.opt_p_disc);
 handles.lcl_graf=mesh(pplot);
 
 % --- Executes on button press in bto_p_sub_div_malha.
